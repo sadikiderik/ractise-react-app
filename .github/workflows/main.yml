@@ -37,5 +37,5 @@ jobs:
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
 
-       - name: Notify deployment status
-         run: echo "Deployment completed successfully"
+      - name: Notify deployment status
+        run: echo "Deployment completed successfully"
