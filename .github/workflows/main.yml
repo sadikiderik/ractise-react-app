@@ -24,8 +24,10 @@ jobs:
       - name: Install Firebase CLI
         run: npm install -g firebase-tools
 
+      - name: Run tests
+        run: npm test 
+
       - name: Build your web application
-        run: npm test
         run: npm run build  # Replace with the build command for your project
 
       - name: Deploy to Firebase Hosting
@@ -34,3 +36,6 @@ jobs:
           firebase deploy --only hosting --token "$FIREBASE_TOKEN"
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+
+       - name: Notify deployment status
+         run: echo "Deployment completed successfully"
